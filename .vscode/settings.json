@@ -1,0 +1,12 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "lib"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Applications/XAMPP/xamppfiles/mysql/**/*.jar",
+        "/Users/justinomekwe/Documents/mysql-connector-java-8.0.27.jar"
+    ]
+}
