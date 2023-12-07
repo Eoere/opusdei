@@ -23,10 +23,9 @@ public class logoutpanel extends JPanel {
             ex.printStackTrace(); // Or handle more gracefully
         }
         System.err.println("Failed to initialize LaF");
+        UIManager.put("Button.arc", 8); // Rounded buttons with an arc of 8
 
         setLayout(null);
-        setBackground(java.awt.Color.BLACK);
-        setBounds(0, 0, 500, 500);
     //create logout button
     JButton logoutButton = new JButton("Logout");
     logoutButton.setBackground(java.awt.Color.RED);

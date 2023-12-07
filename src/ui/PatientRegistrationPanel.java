@@ -146,9 +146,7 @@ public class PatientRegistrationPanel extends JPanel {
         String lastName = lastNameText.getText();
         String address = addressText.getText();
         String sex=sexText.getText();
-        if (sex.length() > 1) {
-            // Option 1: Truncate the string to one character
-            sex = sex.substring(0, 1);}
+        
         Date DOB= Date.valueOf(dobText.getText());
         int  phoneNumber= Integer.parseInt(phoneNumberText.getText());
         String insurancetype= insurancetypeText.getText();

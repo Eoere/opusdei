@@ -46,6 +46,7 @@ public class HospitalManagementSystem {
                 // Add medical-related tabs
                 tabbedPane.addTab("Patients", new PatientRegistrationPanel());
                 tabbedPane.addTab("Records", new  MedicalRecordsPanel());
+
                 tabbedPane.addTab("Logout", new logoutpanel());
 
                 break;
@@ -56,6 +57,7 @@ public class HospitalManagementSystem {
                 tabbedPane.addTab("Logout", new logoutpanel());
                 break;
             case ADMINISTRATOR:
+            
 
                 // Add tabs for administration
                 // ...

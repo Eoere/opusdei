@@ -74,7 +74,7 @@ public class LoginPanel extends JPanel {
     }
 
     private void openMainSystem(UserRole role) {
-        JFrame mainFrame = new JFrame("Hospital Management System");
+        JFrame mainFrame = new JFrame("OpusDei");
         HospitalManagementSystem.setupMainFrame(mainFrame, role);
         mainFrame.pack();
         mainFrame.setVisible(true);
