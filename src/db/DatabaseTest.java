@@ -13,7 +13,7 @@ public class DatabaseTest {
     private static final String PASSWORD = "Mekksrules2002$";
 
     public static void testConnection() {
-        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+        try (Connection conn = DriverManager.getConnection(URL, USER,PASSWORD )) {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT VERSION()");
 

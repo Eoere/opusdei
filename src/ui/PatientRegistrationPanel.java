@@ -148,15 +148,15 @@ public class PatientRegistrationPanel extends JPanel {
         String sex=sexText.getText();
         
         Date DOB= Date.valueOf(dobText.getText());
-        int  phoneNumber= Integer.parseInt(phoneNumberText.getText());
+        String phoneNumber= phoneNumberText.getText();
         String insurancetype= insurancetypeText.getText();
 
-        int insuranceNumber= Integer.parseInt(insuranceNumberText.getText());
-        int creditCardInfo= Integer.parseInt(creditCardInfoText.getText());
+        String insuranceNumber= insuranceNumberText.getText();
+        String creditCardInfo= creditCardInfoText.getText();
         String email= emailText.getText();
         String patientType= patientTypeText.getText();
         String guardianName= guardianNameText.getText();
-        int guardianPhone= Integer.parseInt(guardianPhoneText.getText());
+        String guardianPhone= guardianPhoneText.getText();
         String seenDateTime= seenDateTimeText.getText();
 
 
@@ -199,8 +199,8 @@ public class PatientRegistrationPanel extends JPanel {
 
     //insert patient into database method logic
     private void insertPatientIntoDatabase(int patientid, String firstName, String middleinitial, String lastName,
-            String address, String sex, Date dOB, int phoneNumber, String insurancetype, int  insuranceNumber,
-            int creditCardInfo, String email, String patientType, String guardianName, int guardianPhone,
+            String address, String sex, Date dOB, String phoneNumber, String insurancetype, String insuranceNumber,
+            String  creditCardInfo, String email, String patientType, String guardianName, String guardianPhone,
             String seenDateTime) {
         String sql = "INSERT INTO Patient VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         try(Connection conn= DatabaseUtil.getConnection();
@@ -218,15 +218,15 @@ public class PatientRegistrationPanel extends JPanel {
          pstmt.setString(6,sex);
         
             pstmt.setDate(7, dOB);
-            pstmt.setInt(8, phoneNumber);
+            pstmt.setString(8, phoneNumber);
             pstmt.setString(9, insurancetype);
-            pstmt.setInt(10, insuranceNumber);
-            pstmt.setInt(11, creditCardInfo);
+            pstmt.setString(10, insuranceNumber);
+            pstmt.setString(11, creditCardInfo);
             pstmt.setString(12, email);
             pstmt.setString(13, patientType);
 
             pstmt.setString(14, guardianName);
-            pstmt.setInt(15, guardianPhone);
+            pstmt.setString(15, guardianPhone);
             pstmt.setString(16, seenDateTime);
             pstmt.executeUpdate();
             JOptionPane.showMessageDialog(this, "Patient registered successfully!");
