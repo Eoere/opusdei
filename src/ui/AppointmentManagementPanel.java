@@ -35,6 +35,7 @@ public class AppointmentManagementPanel extends JPanel {
     private JButton viewDetailsButton;
     private JButton cancelAppointmentButton;
     private JButton rescheduleAppointmentButton;
+    
 
     public AppointmentManagementPanel() {
         try {
@@ -55,11 +56,13 @@ public class AppointmentManagementPanel extends JPanel {
         viewDetailsButton = new JButton("View Details");
         cancelAppointmentButton = new JButton("Cancel Appointment");
         rescheduleAppointmentButton = new JButton("Reschedule");
+      
 
         // Add buttons to the button panel
         buttonPanel.add(viewDetailsButton);
         buttonPanel.add(cancelAppointmentButton);
         buttonPanel.add(rescheduleAppointmentButton);
+       
 
         // Add the button panel to the main panel
         add(buttonPanel, BorderLayout.SOUTH);
@@ -123,6 +126,7 @@ public class AppointmentManagementPanel extends JPanel {
             }
             
         });
+    
 
         cancelAppointmentButton.addActionListener(new ActionListener() {
             @Override
@@ -191,6 +195,23 @@ public class AppointmentManagementPanel extends JPanel {
 
         // Load appointments (dummy data for now, replace with DB call)
         loadAppointments();
+    }
+
+    protected boolean appointmentExists(int appointmentId) {
+        String sql = "SELECT * FROM Appointment WHERE id = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, appointmentId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Or handle more gracefully
+        }
+        return false;
     }
 
     private void loadAppointments() {

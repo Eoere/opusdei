@@ -53,6 +53,7 @@ public class HospitalManagementSystem {
             case RECEPTIONIST:
                 // Add scheduling and registration tabs
                 tabbedPane.addTab("Appointments", new AppointmentManagementPanel());
+                tabbedPane.addTab(MakeAppointmentPanel.class.getSimpleName(), new MakeAppointmentPanel());
                 tabbedPane.addTab("Register Patient", new PatientRegistrationPanel());
                 tabbedPane.addTab("Logout", new logoutpanel());
                 break;
